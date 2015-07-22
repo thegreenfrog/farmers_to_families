@@ -1,0 +1,38 @@
+<template name="header">
+    <nav class = "navbar navbar=default" role="navigation">
+        <div class="navbar-header">
+            <button typ="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{pathFor 'farmersList'}}">Main Page</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="">Best</a>
+                </li>
+                <li>
+                    <a href="">New</a>
+                </li>
+                {{#if currentUser}}
+                    <li>
+                        <a href="">Profile</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor 'producePost'}}">Post Produce</a>
+                    </li>
+                    <!--Profile-->
+                    <li class="dropdown">
+                        <!--notifications-->
+                    </li>
+                {{/if}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{> loginButtons}}
+            </ul>
+        </div>
+    </nav>
+</template>
