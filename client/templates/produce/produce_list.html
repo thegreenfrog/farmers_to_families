@@ -1,0 +1,9 @@
+<template name="produceList">
+    <div class="posts">
+        {{#each posts}}
+            <a href="{{pathFor 'producePost'}}">
+                {{> producePost}}
+            </a>
+        {{/each}}
+    </div>
+</template>
