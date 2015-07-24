@@ -4,13 +4,12 @@ Template.producePost.events({
 
        var post = {
            produce: $(e.target).find('[name=produce]').val(),
-           price: parseFloat($(e.target).find('[name=price]').val()),
+           price: parseFloat($(e.target).find('[name=price]').val())
        };
 
        Meteor.call('postInsert', post, function(error, result) {
            if(error)
             return alert(error.reason);
-           console.log(result._id);
            //if link already exists
            if(result.postExists)
             alert('This link has already been posted');
