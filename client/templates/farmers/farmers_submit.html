@@ -1,0 +1,24 @@
+<template name="farmerSubmit">
+    <form class="main form page">
+        <div class="form-group">
+            <label class="control-label" for="url">Farm Name</label>
+            <div class="controls">
+                <input name="name" id="name" type="text" value="" placeholder="Name of farm" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="title">Location</label>
+            <div class="controls">
+                <input name="location" id="location" type="text" value="" placeholder="i.e. Scarborough, ME" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="title">Description</label>
+            <div class="controls">
+                <input name="description" id="description" type="text" value=""
+                       placeholder="Tell us about your farm! (farming techniques, organic, etc), " class="form-control"/>
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+</template>

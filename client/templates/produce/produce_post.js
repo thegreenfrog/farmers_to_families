@@ -10,7 +10,7 @@ Template.producePost.events({
        Meteor.call('postInsert', post, function(error, result) {
            if(error)
             return alert(error.reason);
-
+           console.log(result._id);
            //if link already exists
            if(result.postExists)
             alert('This link has already been posted');

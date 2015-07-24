@@ -1,11 +1,13 @@
-if (Farmers.find().count() === 0) {
-    Farmers.insert({
-        title: 'Napa Farms',
-        location: 'California'
+if (Posts.find().count() === 0) {
+    Posts.insert({
+        produce: 'Kale',
+        price: '4.99',
+        author: 'baeFarms',
     });
 
-    Farmers.insert({
-        title: 'Stowe Farms',
-        location: 'Maine'
+    Posts.insert({
+        produce: 'Bananas',
+        price: '0.99',
+        author: 'Chiquita',
     });
 }
