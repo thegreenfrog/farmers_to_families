@@ -1,4 +1,4 @@
-Template.producePost.events({
+Template.produceSubmit.events({
    'submit form': function(e){
        e.preventDefault();
 
