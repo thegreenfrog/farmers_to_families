@@ -7,19 +7,20 @@ Template.produceEdit.events({
     'submit form': function(e) {
         e.preventDefault();
 
-        var currentPostId = this._id;
+        var postId = this._id;
 
         var postProperties = {
             produce: $(e.target).find('[name=produce]').val(),
             price: parseFloat($(e.target).find('[name=price]').val())
         }
 
-        Posts.update(currentPostId, {$set: postProperties}, function(error) {
+        Posts.update(postId, {$set: postProperties}, function(error) {
             if (error) {
                 // display the error to the user
-                return alert(error.reason);
+                alert(error.reason);
             } else {
-                Router.go('producePage', {_id: currentPostId});
+                console.log(postProperties.price);
+                Router.go('producePage', {_id: postId});
             }
         });
     },
