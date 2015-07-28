@@ -1,3 +1,11 @@
-Meteor.publish('posts', function() {
-    return Posts.find();
+Meteor.publish('posts', function(options) {
+    check(options, Object);
+
+    return Posts.find({}, options);
 });
+
+Meteor.publish('farmers', function(options) {
+    check(options, Object);
+
+    return Farmers.find({}, options);
+})
