@@ -7,8 +7,9 @@
 meteor-platform
 twbs:bootstrap
 underscore
-ian:accounts-ui-bootstrap-3
 accounts-password
 iron:router
 sacha:spin
 audit-argument-checks
+accounts-facebook
+accounts-ui
