@@ -1,5 +1,15 @@
 <template name="producePage">
     <div class="post-page page">
-        {{> produceItem}}
+        <div class="post">
+            <div class="post-content">
+                <h3>{{produce}}</h3>
+                <p>
+                    ${{price}} lb
+                    posted by {{author}}
+
+                    {{#if ownPost}}<a href={{pathFor 'produceEdit'}}>Edit</a>{{/if}}
+                </p>
+            </div>
+        </div>
     </div>
 </template>

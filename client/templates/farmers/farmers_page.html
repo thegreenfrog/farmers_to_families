@@ -1,5 +1,12 @@
 <template name="farmersPage">
-    <div class="post-page page">
-        {{> farmersItem}}
+    <div class="farmers-page page">
+        <div class="post">
+            <div class="post-content">
+                <h2>{{name}}</h2>
+                <h3>Location: {{location}}</h3>
+                <h3>Member since: {{date}}</h3>
+                <p>Description: {{description}}</p>
+            </div>
+        </div>
     </div>
 </template>

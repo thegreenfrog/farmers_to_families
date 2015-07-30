@@ -1,5 +1,5 @@
 Template.farmersList.helpers({
    farmers: function() {
-       return Farmers.find({}, {sort: {submitted: -1}});
+       return Farmers.find({}, {sort: {joined: -1}});
    }
 });
