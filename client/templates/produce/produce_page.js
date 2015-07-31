@@ -2,7 +2,7 @@ Template.producePage.helpers({
     ownPost: function() {
         return this.item.userId === Meteor.userId();
     },
-    time: function() {
+    date: function() {
         //get the date mm/dd/yyyy
         var today = this.item.joined;
         var dd = today.getDate();
