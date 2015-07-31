@@ -2,10 +2,10 @@
     <div class="post-page page">
         <div class="post">
             <div class="post-content">
-                <h3>{{this.item.produce}}</h3>
+                <h3>{{this.produce}}</h3>
                 <p>
-                    ${{this.item.price}} lb
-                    posted by {{this.item.author}}
+                    ${{this.price}} lb
+                    posted by {{this.author}}
                     at {{date}}
 
                     {{#if ownPost}}<a href={{pathFor 'produceEdit'}}>Edit</a>{{/if}}

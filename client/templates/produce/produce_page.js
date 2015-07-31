@@ -1,10 +1,10 @@
 Template.producePage.helpers({
     ownPost: function() {
-        return this.item.userId === Meteor.userId();
+        return this.userId === Meteor.userId();
     },
     date: function() {
         //get the date mm/dd/yyyy
-        var today = this.item.joined;
+        var today = this.joined;
         var dd = today.getDate();
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
