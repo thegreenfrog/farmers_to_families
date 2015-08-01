@@ -13,6 +13,17 @@ Meteor.startup(function() {
             author: 'Chiquita',
             joined: new Date()
         });
+
+        var now = new Date().getTime();
+        for (var i = 0; i < 30; i++) {
+            Posts.insert({
+                produce: 'Produce' + i,
+                price: '0.99',
+                author: 'McGregor Farms',
+                userId: '12839HDKS',
+                joined: new Date(now - i * 3600 * 1000)
+            });
+        }
     }
 
     //setup signup email notification service
