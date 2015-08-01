@@ -5,7 +5,7 @@ Template.produceList.helpers({
 
     moreResults: function() {
         //if we have fewer rows than we asked for when subscribing, then we have all the items in the collections
-        return !(Posts.find().count() < Session.get("itemsLimit"));
+        return !(Posts.find().count() < Session.get("itemsLimitPosts"));
     }
 });
 
@@ -22,8 +22,8 @@ function showMoreVisible() {
         if (!target.data("visible")) {
             //console.log("target became visible (inside viewable area)");
             target.data("visible", true);
-            Session.set("itemsLimit",
-                Session.get("itemsLimit") + ITEMS_INCREMENT);
+            Session.set("itemsLimitPosts",
+                Session.get("itemsLimitPosts") + ITEMS_INCREMENT);
         }
     } else {
         if (target.data("visible")) {

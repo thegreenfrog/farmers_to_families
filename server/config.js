@@ -16,9 +16,10 @@ Meteor.startup(function() {
 
         var now = new Date().getTime();
         for (var i = 0; i < 30; i++) {
-            Posts.insert({
-                produce: 'Produce' + i,
-                price: '0.99',
+            Farmers.insert({
+                name: 'Farm' + i,
+                location: 'Brunswick, ME',
+                description: 'Farm in Maine',
                 author: 'McGregor Farms',
                 userId: '12839HDKS',
                 joined: new Date(now - i * 3600 * 1000)
