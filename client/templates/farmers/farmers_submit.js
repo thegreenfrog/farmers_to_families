@@ -1,13 +1,31 @@
+Template.farmerSubmit.onCreated(function() {
+   Session.set('farmerSubmitErrors', {});
+});
+
+Template.farmerSubmit.helpers({
+   errorClass: function(field) {
+       return !!Session.get('farmerSubmitErrors')[field] ? 'has-error' : '';
+   },
+    errorMessage: function(field) {
+        return Session.get('farmerSubmitErrors')[field];
+    }
+});
+
 Template.farmerSubmit.events({
    'submit form': function(e) {
        e.preventDefault();
 
        var farmer = {
-           name: $(e.target).find('[name=title]').val(),
+           name: $(e.target).find('[name=name]').val(),
            city: $(e.target).find('[name=city]').val(),
            state: $(e.target).find('[name=state]').val(),
            description: $(e.target).find('[name=description]').val()
        };
+
+       var errors = validateFarmer(farmer);
+       if(errors.name || errors.state || errors.city || errors.description) {
+           return Session.set('farmerSubmitErrors', errors);
+       }
 
        Meteor.call('farmerInsert', farmer, function(error, result) {
           if(error) {
