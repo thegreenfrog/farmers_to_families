@@ -12,14 +12,12 @@ Template.produceEdit.events({
         var postProperties = {
             produce: $(e.target).find('[name=produce]').val(),
             price: parseFloat($(e.target).find('[name=price]').val())
-        }
-
+        };
         Posts.update(postId, {$set: postProperties}, function(error) {
             if (error) {
                 // display the error to the user
                 alert(error.reason);
             } else {
-                console.log(postProperties.price);
                 Router.go('producePage', {_id: postId});
             }
         });
