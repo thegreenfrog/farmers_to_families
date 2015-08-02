@@ -4,7 +4,8 @@ Template.farmerSubmit.events({
 
        var farmer = {
            name: $(e.target).find('[name=title]').val(),
-           location: $(e.target).find('[name=location]').val(),
+           city: $(e.target).find('[name=city]').val(),
+           state: $(e.target).find('[name=state]').val(),
            description: $(e.target).find('[name=description]').val()
        };
 

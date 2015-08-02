@@ -18,7 +18,8 @@ Meteor.startup(function() {
         for (var i = 0; i < 30; i++) {
             Farmers.insert({
                 name: 'Farm' + i,
-                location: 'Brunswick, ME',
+                city: 'Brunswick',
+                state: 'Maine',
                 description: 'Farm in Maine',
                 author: 'McGregor Farms',
                 userId: '12839HDKS',
