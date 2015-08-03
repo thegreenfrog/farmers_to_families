@@ -23,7 +23,7 @@ Template.farmerSubmit.events({
        };
 
        var errors = validateFarmer(farmer);
-       if(errors.name || errors.state || errors.city || errors.description) {
+       if(errors.name || errors.state || errors.city || errors.description || errors.duplicate) {
            return Session.set('farmerSubmitErrors', errors);
        }
 
