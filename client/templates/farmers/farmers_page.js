@@ -14,5 +14,9 @@ Template.farmersPage.helpers({
         }
         today = mm+'/'+dd+'/'+yyyy;
         return today;
+    },
+
+    posts: function() {
+        return Posts.find({}, {sort: {joined: -1}});
     }
 });

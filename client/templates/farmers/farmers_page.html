@@ -1,12 +1,14 @@
 <template name="farmersPage">
     <div class="farmers-page page">
-        <div class="post">
-            <div class="post-content">
-                <h2>{{this.name}}</h2>
-                <h3>Location: {{this.location}}</h3>
-                <h3>Member since: {{date}}</h3>
-                <p>Description: {{this.description}}</p>
-            </div>
-        </div>
+        <h2>{{this.name}}</h2>
+        <h3>Location: {{this.location}}</h3>
+        <h3>Member since: {{date}}</h3>
+        <p>Description: {{this.description}}</p>
+
+        {{#each posts}}
+            <a href="{{pathFor 'producePage'}}">
+                {{> produceItem}}
+            </a>
+        {{/each}}
     </div>
 </template>

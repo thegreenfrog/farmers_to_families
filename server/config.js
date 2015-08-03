@@ -1,18 +1,18 @@
 Meteor.startup(function() {
     if (Posts.find().count() === 0) {
-        Posts.insert({
-            produce: 'Kale',
-            price: '4.99',
-            author: 'basicFarms',
-            joined: new Date()
-        });
-
-        Posts.insert({
-            produce: 'Bananas',
-            price: '0.99',
-            author: 'Chiquita',
-            joined: new Date()
-        });
+        //Posts.insert({
+        //    produce: 'Kale',
+        //    price: '4.99',
+        //    author: 'basicFarms',
+        //    joined: new Date()
+        //});
+        //
+        //Posts.insert({
+        //    produce: 'Bananas',
+        //    price: '0.99',
+        //    author: 'Chiquita',
+        //    joined: new Date()
+        //});
 
         var now = new Date().getTime();
         for (var i = 0; i < 30; i++) {
