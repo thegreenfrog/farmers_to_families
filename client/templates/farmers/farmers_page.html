@@ -4,6 +4,7 @@
         <h3>Location: {{this.location}}</h3>
         <h3>Member since: {{date}}</h3>
         <p>Description: {{this.description}}</p>
+        <a href ="{{pathFor 'farmersEdit'}}">Edit</a>
 
         {{#each posts}}
             <a href="{{pathFor 'producePage'}}">

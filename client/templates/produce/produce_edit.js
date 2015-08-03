@@ -21,7 +21,7 @@ Template.produceEdit.events({
             price: parseFloat($(e.target).find('[name=price]').val())
         };
 
-        var errors = validatePost(postProperties);
+        var errors = validatePost(postProperties, 'edit');
         if(errors.produce || errors.price) {
             console.log('errors');
             return Session.set('produceEditErrors', errors);

@@ -22,7 +22,7 @@ Template.farmerSubmit.events({
            description: $(e.target).find('[name=description]').val()
        };
 
-       var errors = validateFarmer(farmer);
+       var errors = validateFarmer(farmer, 'create');
        if(errors.name || errors.state || errors.city || errors.description || errors.duplicate) {
            return Session.set('farmerSubmitErrors', errors);
        }
