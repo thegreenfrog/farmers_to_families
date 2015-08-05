@@ -1,15 +1,24 @@
 <template name="farmersPage">
     <div class="farmers-page page">
-        <h2>{{this.name}}</h2>
-        <h3>Location: {{this.location}}</h3>
-        <h3>Member since: {{date}}</h3>
-        <p>Description: {{this.description}}</p>
-        <a href ="{{pathFor 'farmersEdit'}}">Edit</a>
+        <div class="profile">
+            <h2>{{this.name}}</h2>
+            <h3>Location: {{this.location}}</h3>
+            <h3>Member since: {{date}}</h3>
+            <p>Description: {{this.description}}</p>
+            <a href ="{{pathFor 'farmersEdit'}}">Edit</a>
+        </div>
+        <div class="posts">
+            {{#each posts}}
+                <a href="{{pathFor 'producePage'}}">
+                    {{> produceItem}}
+                </a>
+            {{/each}}
 
-        {{#each posts}}
-            <a href="{{pathFor 'producePage'}}">
-                {{> produceItem}}
-            </a>
-        {{/each}}
+            {{#if moreResults}}
+                <div id="showMoreResults" style="margin-left: 25px;">
+                    <span class="loading">Loading...</span>
+                </div>
+            {{/if}}
+        </div>
     </div>
 </template>

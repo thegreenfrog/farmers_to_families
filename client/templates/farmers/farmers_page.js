@@ -18,5 +18,10 @@ Template.farmersPage.helpers({
 
     posts: function() {
         return Posts.find({}, {sort: {joined: -1}});
+    },
+
+    moreResults: function() {
+        //if we have fewer rows than we asked for when subscribing, then we have all the items in the collections
+        return !(Posts.find().count() < Session.get("postLimitFarmer"));
     }
 });
