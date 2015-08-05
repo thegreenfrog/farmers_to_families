@@ -44,12 +44,13 @@ Template.farmersEdit.events({
         e.preventDefault();
 
         if (confirm("Delete this post?")) {
-            var currentFarmerId = this._id;
-            Farmers.remove(currentFarmerId);
-            var farmerPosts = Posts.find({userId: this.userId});
+            var farmerPosts = Posts.find({userId: Meteor.user()._id});
             farmerPosts.forEach(function(post){
                 Posts.remove(post._id);
-            })
+            });
+            var currentFarmerId = this._id;
+            Farmers.remove(currentFarmerId);
+            Meteor.users.update({_id: Meteor.user()._id}, {$set: {'farm': null}});
             Router.go('farmersList');
         }
     }
