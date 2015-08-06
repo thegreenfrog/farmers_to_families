@@ -7,25 +7,13 @@ Meteor.publish("userData", function () {
     }
 });
 
-
-Meteor.users.allow({
-    update: function(userId, doc, fieldNames) {
-        console.log('checking allow permissions');
-        if(_.without(fieldNames, 'farm').length > 0) {
-            return false;
+removeFarmer = function(userId) {
+    Meteor.users.update({_id: Meteor.user()._id}, {$set: {'farm': null}}, function(error){
+        console.log('computing in server');
+        if(error) {
+            throw new Meteor.Error(error);
         }
-        console.log('changing valid fields');
-        return userId === doc.userId;
-    }
-});
-
-Meteor.users.deny({
-    update: function(userId, doc, fieldNames) {
-        console.log('checking allow permissions');
-        if(_.without(fieldNames, 'farm').length > 0) {
-            return true;
-        }
-        console.log('changing valid fields');
-        return !(userId === doc.userId);
-    }
-});
+        Farmers.remove(userId);
+        console.log('removed farmer');
+    });
+};

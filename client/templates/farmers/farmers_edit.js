@@ -48,11 +48,13 @@ Template.farmersEdit.events({
             farmPosts.forEach(function(post){
                 Posts.remove(post._id);
             });
-            console.log('finished removing posts');
-            var currentFarmerId = this._id;
-            Farmers.remove(currentFarmerId);
-            console.log('removed farmer');
-            Meteor.users.update({_id: Meteor.userId()}, {$set: {'farm': null}});
+            Meteor.call('removeFarmer', this._id, function(error) {
+                if(error) {
+                    console.log(error);
+                    return;
+                }
+            });
+
             console.log('removed user reference');
             Router.go('farmersList');
         }
