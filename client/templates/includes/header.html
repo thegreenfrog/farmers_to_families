@@ -21,9 +21,11 @@
                     <li>
                         <a href="">Profile</a>
                     </li>
-                    <li>
-                        <a href="{{pathFor 'produceSubmit'}}">Post Produce</a>
-                    </li>
+                    {{#if currentFarmer}}
+                        <li>
+                            <a href="{{pathFor 'produceSubmit'}}">Post Produce</a>
+                        </li>
+                    {{/if}}
                     <li>
                         <a href="{{pathFor 'farmerSubmit'}}">Local Farmer? Register here!</a>
                     </li>
