@@ -9,8 +9,14 @@
 
 body {
     background: #eee;
-    color: #666666; }
+    color: #666666;
+}
 
+#login-dropdown-list {
+    position: fixed;
+    left: initial;
+    right: 10px;
+}
 #main {
     position: relative;
 }
