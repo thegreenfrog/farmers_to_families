@@ -1,6 +1,8 @@
 Template.profilePage.helpers({
    activities: function() {
-       console.log(Posts.find().count());
        return Posts.find();
-   }
+   },
+    farmExists: function() {
+        return !!Meteor.user().farm;
+    }
 });

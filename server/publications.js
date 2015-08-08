@@ -7,11 +7,9 @@ Meteor.publish("userData", function () {
     }
 });
 
-Meteor.publish("userActivities", function() {
-    if(this.userId) {
-        var user = Meteor.users.findOne(this.userId);
-        return[
-            Posts.find({userId: user._id})
-        ];
-    }
+Meteor.publish("userActivities", function(username) {
+    check(username, String);
+    return[
+        Posts.find({author: username})
+    ];
 });

@@ -5,7 +5,7 @@
                 <h3>{{this.produce}}</h3>
                 <p>
                     ${{this.price}} lb
-                    posted by {{this.author}}
+                    posted by <a href="{{pathFor 'profilePage' _username=profileRoute}}">{{this.author}}</a>
                     at {{date}}
 
                     {{#if ownPost}}<a href={{pathFor 'produceEdit'}}>Edit</a>{{/if}}

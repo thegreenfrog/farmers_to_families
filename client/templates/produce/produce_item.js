@@ -27,7 +27,6 @@ Template.produceItem.helpers({
         return today;
     },
     profileRoute: function() {
-        var user = Meteor.users.findOne(Meteor.userId());
-        return user._id;
+        return this.author;
     }
 });

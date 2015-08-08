@@ -4,6 +4,6 @@ Template.header.helpers({
    },
     profileRoute: function() {
         var user = Meteor.users.findOne(Meteor.userId());
-        return user._id;
+        return user.username;
     }
 });

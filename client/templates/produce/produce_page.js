@@ -28,5 +28,8 @@ Template.producePage.helpers({
         }
         today = mm+'/'+dd+'/'+yyyy + '  ' +hour+':'+min+' '+halfday;
         return today;
+    },
+    profileRoute: function() {
+        return this.author;
     }
 });
