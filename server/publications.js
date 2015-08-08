@@ -6,3 +6,9 @@ Meteor.publish("userData", function () {
         this.ready();
     }
 });
+
+Meteor.publish("userActivities", function(Id) {
+   return[
+     Posts.find({userId: Id})
+   ];
+});

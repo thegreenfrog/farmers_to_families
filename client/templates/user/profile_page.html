@@ -1,0 +1,20 @@
+<template name="profilePage">
+    <div class=".col-sm-5 .col-md-4">
+        <div class="thumbnail" id="prof-pic">
+            <img src="" alt="Profile Picture">
+        </div>
+        <div class="thumbnail" id="prof-info">
+            <ul class="ui-profile-list">
+                <li></li>
+            </ul>
+        </div>
+        <div class="thumbnail" id="farm-info">
+
+        </div>
+    </div>
+    <div class=".col-sm-7 .col-md-8">
+        {{#each activities}}
+            {{> activityItem}}
+        {{/each}}
+    </div>
+</template>
