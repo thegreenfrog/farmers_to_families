@@ -17,7 +17,7 @@ Template.produceItem.helpers({
         if(hour === 24) {
             hour -=12;
         } else if(hour > 12) {
-            hour -= 12
+            hour -= 12;
             halfday = 'PM';
         }
         if(min<10) {
@@ -25,5 +25,9 @@ Template.produceItem.helpers({
         }
         today = mm+'/'+dd+'/'+yyyy + '  ' +hour+':'+min+' '+halfday;
         return today;
+    },
+    profileRoute: function() {
+        var user = Meteor.users.findOne(Meteor.userId());
+        return user._id;
     }
 });

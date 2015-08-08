@@ -4,7 +4,7 @@
             <h3>{{produce}}</h3>
             <p>
                 ${{price}} lb
-                posted by {{author}}
+                posted by <a href="{{pathFor 'profilePage' _id=profileRoute}}">{{author}}</a>
                 at {{date}}
             </p>
         </div>
