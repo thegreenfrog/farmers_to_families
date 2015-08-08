@@ -7,3 +7,10 @@ Template.header.helpers({
         return user.username;
     }
 });
+
+Template.header.events({
+    'keypress #search-button': function() {
+        $('button').prop('disabled', false);
+        console.log('disabled button');
+    }
+});
