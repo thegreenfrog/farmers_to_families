@@ -19,7 +19,7 @@
                 </li>
                 {{#if currentUser}}
                     <li>
-                        <a href="{{pathFor 'profilePage' _id=Meteor.user()._id}}">Profile</a>
+                        <a href="{{pathFor 'profilePage' _id=profileRoute}}">Profile</a>
                     </li>
                     {{#if currentFarmer}}
                         <li>

@@ -7,8 +7,11 @@ Meteor.publish("userData", function () {
     }
 });
 
-Meteor.publish("userActivities", function(Id) {
-   return[
-     Posts.find({userId: Id})
-   ];
+Meteor.publish("userActivities", function() {
+    if(this.userId) {
+        var user = Meteor.users.findOne(this.userId);
+        return[
+            Posts.find({userId: user._id})
+        ];
+    }
 });

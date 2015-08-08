@@ -14,7 +14,9 @@
     </div>
     <div class=".col-sm-7 .col-md-8">
         {{#each activities}}
-            {{> activityItem}}
+            <a href="{{pathFor 'producePage'}}">
+                {{> activityItem}}
+            </a>
         {{/each}}
     </div>
 </template>
