@@ -33,14 +33,17 @@
                         <!--notifications-->
                     </li>
                 {{/if}}
-                <div class="input-group">
-                    <input type="text" id="search-button" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" disabled>
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        </button>
-                    </span>
-                </div>
+
+                <form name="search-form">
+                    <div class="input-group">
+                        <input type="text" id="search-text" name="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" disabled>
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{> loginButtons}}
