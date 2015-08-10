@@ -11,5 +11,17 @@ Meteor.publish("userActivities", function(username) {
     check(username, String);
     return[
         Posts.find({author: username})
+    ]
+});
+
+Meteor.publish("searchResults", function (urlString) {
+    check(urlString, String);
+
+    var result = searchDatabase(urlString);
+
+    return [
+        Posts.find({_id: {$in: result}}),
+        Farmers.find({_id: {$in: result}})
     ];
+
 });

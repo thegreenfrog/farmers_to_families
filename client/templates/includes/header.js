@@ -20,8 +20,20 @@ Template.header.events({
         var searchSubmit = $(e.target).find('[name=text]').val();
         console.log(searchSubmit);
         var keys = String(searchSubmit).split(" ");
-        Meteor.call('searchDatabase', keys, function(error, result) {
 
+        var urlString = "";
+        var first = true;
+        keys.forEach(function(element) {
+            if(first) {
+                urlString = urlString.concat(element);
+                first = false;
+            }
+            else {
+                urlString = urlString + "+" + element;
+            }
         });
+
+        //go to search page passing it the search keys in the proper url format
+        Router.go("searchPage", {_queryList: urlString});
     }
 });
