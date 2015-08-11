@@ -1,12 +1,17 @@
 <template name="produceItem">
     <div class="post">
         <div class="post-content">
-            <h3>{{produce}}</h3>
-            <p>
-                ${{price}} lb
-                posted by <a href="{{pathFor 'profilePage' _username=profileRoute}}">{{author}}</a>
-                at {{date}}
-            </p>
+            <div class="produce">
+                <h3>{{produce}}</h3>
+            </div>
+            <div class="price-tag">
+                <h3>${{price}} lb</h3>
+            </div>
+
+            <div class="author">
+                <a href="{{pathFor 'profilePage' _username=profileRoute}}">{{author}}</a>
+            </div>
+
         </div>
     </div>
 </template>
