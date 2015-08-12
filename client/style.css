@@ -149,6 +149,10 @@ a:hover {
     height: 100px;
 }
 
+.dropdown li{
+    color: #101010;
+}
+
 .jumbotron{
     text-align: center;
 }

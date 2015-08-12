@@ -1,19 +1,70 @@
 <template name="produceSubmit">
     <form class="main form page">
+
         <div class="form-group {{errorClass 'produce'}}">
-            <label class="control-label" for="produce">Produce</label>
             <div class="controls">
-                <input name="produce" id="produce" type="text" value="" placeholder="Kale, Carrots, Apples,..." class="form-control"/>
+                <input name="produce" id="produce" type="text" value="" placeholder="What are you selling? be specific!" class="form-control"/>
                 <span class="help-block">{{errorMessage 'produce'}}</span>
             </div>
         </div>
+
         <div class="form-group {{errorClass 'price'}}">
-            <label class="control-label" for="price">Price per Pound</label>
             <div class="controls">
-                <input name="price" id="price-per-pound" type="number" min="0" step="0.01" value="" placeholder="" class="form-control"/>
+                <input name="price" id="price" type="number" min="0" step="0.01" value="" placeholder="How much are you selling it for? (per lb)" class="form-control"/>
                 <span class="help-block">{{errorMessage 'price'}}</span>
             </div>
         </div>
+
+        <div class="form-group {{errorClass 'category'}}">
+            <div class="controls">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span id="category-title">{{categoryTitle}}</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li class="category"><a href="">vegetable</a></li>
+                        <li class="category"><a href="">fruit</a></li>
+                        <li class="category"><a href="">dairy</a></li>
+                    </ul>
+                </div>
+                <span class="help-block">{{errorMessage 'category'}}</span>
+            </div>
+        </div>
+
+        <div class="form-group {{errorClass 'type'}}">
+            <div class="controls">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span id="subcategory-title">SubCategory</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu vegetable hidden" aria-labelledby="dropdownMenu1">
+                        <li class="type"><a href="">Carrots</a></li>
+                        <li class="type"><a href="">Squash</a></li>
+                        <li class="type"><a href="">Tomatoes</a></li>
+                        <li class="type"><a href="">Potatoes</a></li>
+                        <li class="type"><a href="">Kale</a></li>
+                        <li class="type"><a href="">Avocado</a></li>
+                    </ul>
+                    <ul class="dropdown-menu fruit hidden" aria-labelledby="dropdownMenu1">
+                        <li class="type"><a href="">Apples</a></li>
+                        <li class="type"><a href="">Oranges</a></li>
+                        <li class="type"><a href="">Peaches</a></li>
+                        <li class="type"><a href="">Pear</a></li>
+                        <li class="type"><a href="">Grapes</a></li>
+                        <li class="type"><a href="">Strawberries</a></li>
+                    </ul>
+                    <ul class="dropdown-menu dairy" aria-labelledby="dropdownMenu1">
+                        <li class="type"><a href="">Milk</a></li>
+                        <li class="type"><a href="">Cheese</a></li>
+                        <li class="type"><a href="">Yogurt</a></li>
+                    </ul>
+                </div>
+                <span class="help-block">{{errorMessage 'type'}}</span>
+            </div>
+        </div>
+
         <input type="submit" value="Submit" class="btn btn-primary"/>
     </form>
 </template>
