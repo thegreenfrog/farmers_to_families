@@ -10,9 +10,14 @@
 body {
     color: #eeeeee;
     background-image: url("/images/brown-bag.jpg");
+    background-size: cover;
 }
 
 a{
+    color: #eeeeee;
+}
+
+a:hover {
     color: #eeeeee;
 }
 
@@ -48,49 +53,60 @@ a{
     margin: 5px;
     /* For modern browsers */
     /* For IE 6/7 (trigger hasLayout) */
-    background: linear-gradient(#8a6d3b 80%, #c0a16b 20%);
     opacity: 1;
     position: relative;
     *zoom: 1;
 }
 
+.post .picture {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/food-stand.jpg");
+    background-size: cover;
+}
 
-.post .produce {
-    bottom: 0;
-    width: 180px;
+.post .label {
+    bottom: 0px;
+    left: 0px;
+    width: 200px;
     height: 50px;
-    line-height: 50px;
+    line-height: 40px;
     position: absolute;
     text-align: center;
     font-size: 18px;
+    background: #c0a16b;
 }
 
 .post .price-tag {
     position: absolute;
-    width: 70px;
-    height: 40px;
-    line-height: 40px;
-    bottom: 90px;
-    left: 0px;
-    background-color: #888888;
+    z-index: 1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    bottom: 130px;
+    left: 10px;
+    background-color: yellow;
     text-align: center;
+    color: #222222;
 }
 
-.post .author {
+.post .farm {
     position: absolute;
-    background-color: #204d74;
-    border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    z-index: 1;
+    background-color: #888888;
     line-height: 75px;
     text-align: center;
-    right: 0px;
-    bottom: 40px;
+    right: 5px;
+    bottom: 5px;
     border: 1px solid white;
 }
 
-.post .author a{
-    font-size: 12px;
+.post .farm a{
+    font-size: 10px;
 }
 
 .post:before, .post:after {

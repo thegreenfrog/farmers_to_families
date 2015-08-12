@@ -1,5 +1,6 @@
 Template.producePage.helpers({
     ownPost: function() {
+        console.log(this.farm_name);
         return this.userId === Meteor.userId();
     },
     date: function() {

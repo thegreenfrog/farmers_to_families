@@ -1,16 +1,16 @@
 <template name="produceItem">
     <div class="post">
-            <div class="produce">
-                {{produce}}
-            </div>
+        <div class="picture">
             <div class="price-tag">
-                ${{price}} lb
+                ${{price}}
             </div>
-
-            <div class="author">
-               <a href="{{pathFor 'profilePage' _username=profileRoute}}">{{author}}</a>
-            </div>
-
-
+            <a href="{{pathFor 'farmersPage' _id=profileRoute}}"> <div class="farm">
+               {{farm_name}}
+            </div></a>
+        </div>
+        <div class="label">
+            {{produce}}
+        </div>
     </div>
+
 </template>
