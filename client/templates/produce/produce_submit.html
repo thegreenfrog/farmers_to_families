@@ -1,5 +1,6 @@
 <template name="produceSubmit">
     <form class="main form page">
+        <h1>Preparing to Harvest Crop? </h1>
 
         <div class="form-group {{errorClass 'produce'}}">
             <div class="controls">
@@ -23,23 +24,23 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li class="category"><a href="">vegetable</a></li>
-                        <li class="category"><a href="">fruit</a></li>
-                        <li class="category"><a href="">dairy</a></li>
+                        <li class="category"><a href="">Vegetable</a></li>
+                        <li class="category"><a href="">Fruit</a></li>
+                        <li class="category"><a href="">Dairy</a></li>
                     </ul>
                 </div>
                 <span class="help-block">{{errorMessage 'category'}}</span>
             </div>
         </div>
 
-        <div class="form-group {{errorClass 'type'}}">
+        <div class="form-group hidden {{errorClass 'type'}}" id="subCat">
             <div class="controls">
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <span id="subcategory-title">SubCategory</span>
+                        <span id="subcategory-title">{{subCategoryTitle}}</span>
                         <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu vegetable hidden" aria-labelledby="dropdownMenu1">
+                    <ul class="dropdown-menu hidden" id="Vegetable" aria-labelledby="dropdownMenu1">
                         <li class="type"><a href="">Carrots</a></li>
                         <li class="type"><a href="">Squash</a></li>
                         <li class="type"><a href="">Tomatoes</a></li>
@@ -47,7 +48,7 @@
                         <li class="type"><a href="">Kale</a></li>
                         <li class="type"><a href="">Avocado</a></li>
                     </ul>
-                    <ul class="dropdown-menu fruit hidden" aria-labelledby="dropdownMenu1">
+                    <ul class="dropdown-menu hidden" id="Fruit" aria-labelledby="dropdownMenu1">
                         <li class="type"><a href="">Apples</a></li>
                         <li class="type"><a href="">Oranges</a></li>
                         <li class="type"><a href="">Peaches</a></li>
@@ -55,7 +56,7 @@
                         <li class="type"><a href="">Grapes</a></li>
                         <li class="type"><a href="">Strawberries</a></li>
                     </ul>
-                    <ul class="dropdown-menu dairy" aria-labelledby="dropdownMenu1">
+                    <ul class="dropdown-menu hidden" id="Dairy" aria-labelledby="dropdownMenu1">
                         <li class="type"><a href="">Milk</a></li>
                         <li class="type"><a href="">Cheese</a></li>
                         <li class="type"><a href="">Yogurt</a></li>

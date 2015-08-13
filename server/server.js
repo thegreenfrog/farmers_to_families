@@ -21,10 +21,11 @@ searchDatabase = function(urlString) {
 
     var results = [];
     keys.forEach(function(element) {
+        lowerKey = element.toLowerCase();
         results = results.concat(
-            Posts.find({author: element}).fetch(), Posts.find({produce: element}).fetch(),
-            Farmers.find({author: element}).fetch(), Farmers.find({name: element}).fetch(),
-            Farmers.find({state: element}).fetch(), Farmers.find({city: element}).fetch()
+            Posts.find({author: lowerKey}).fetch(), Posts.find({produce: lowerKey}).fetch(),
+            Farmers.find({author: lowerKey}).fetch(), Farmers.find({name: lowerKey}).fetch(),
+            Farmers.find({state: lowerKey}).fetch(), Farmers.find({city: lowerKey}).fetch()
         );
     });
     console.log(results.length);
