@@ -12,22 +12,11 @@ Template.produceList.helpers({
 Template.produceList.events({
     'click .input-checkbox': function(e) {
         e.preventDefault();
-        console.log('clicked on filter');
-        console.log($(e.target).parent().text());
-        console.log($(e.target).parent().html());
-        console.log($($(e.target).parent()).text());
+        var text = $(e.target).parent().parent().text();
+        text = text.replace(/\s+/g, '').toLowerCase();
+        console.log(text);
+        Router.go('produceListFilter', {filter: text});
         //get the filter and route to the new search page
-        return;
-    },
-    'submit form': function(e) {
-        e.preventDefault();
-        console.log('submit');
-        //console.log(document.getElementById("vegetable").checked);
-        console.log($(e.target).find('[id=vegetable]').attr('checked'));
-        console.log($(e.target).find('[id=vegetable]').checked);
-        var filterTarget = $(e.target).text();
-        //route to different url
-        return;
     }
 });
 
