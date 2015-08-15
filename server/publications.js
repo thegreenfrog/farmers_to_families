@@ -25,3 +25,9 @@ Meteor.publish("searchResults", function (urlString) {
     ];
 
 });
+
+Meteor.publish("produceFilter", function(filter) {
+    check(filter, String);
+
+    return Posts.find({category: filter});
+});

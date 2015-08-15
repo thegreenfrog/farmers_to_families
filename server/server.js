@@ -44,4 +44,4 @@ searchDatabase = function(urlString) {
 
     return searchId;
 
-}
+};
