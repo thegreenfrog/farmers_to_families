@@ -9,17 +9,6 @@ Template.produceList.helpers({
     }
 });
 
-Template.produceList.events({
-    'click .input-checkbox': function(e) {
-        e.preventDefault();
-        var text = $(e.target).parent().parent().text();
-        text = text.replace(/\s+/g, '').toLowerCase();
-        console.log(text);
-        Router.go('produceListFilter', {filter: text});
-        //get the filter and route to the new search page
-    }
-});
-
 // whenever #showMoreResults becomes visible, retrieve more results
 function showMoreVisible() {
     var threshold, target = $("#showMoreResults");

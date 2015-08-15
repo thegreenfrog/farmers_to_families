@@ -2,22 +2,29 @@
     <div class="input-group">
         <ul>
             <li>
-                <span class="input-checkbox">
-                    <input type="checkbox" aria-label="...">
-                </span>
-                Vegetable
+                <a href="{{pathFor 'produceListFilter' _filter='vegetable'}}">
+                    <div class="accompany-icon">
+
+                    </div>
+                    Vegetables
+                </a>
+
             </li>
             <li>
-                <span class="input-checkbox">
-                    <input type="checkbox" aria-label="...">
-                </span>
-                Fruit
+                <a href="{{pathFor 'produceListFilter' _filter='fruit'}}">
+                    <div class="accompany-icon">
+
+                    </div>
+                    Fruit
+                </a>
             </li>
             <li>
-                <span class="input-checkbox">
-                    <input type="checkbox" aria-label="...">
-                </span>
-                Dairy
+                <a href="{{pathFor 'produceListFilter' _filter='dairy'}}">
+                    <div class="accompany-icon">
+
+                    </div>
+                    Dairy
+                </a>
             </li>
         </ul>
     </div>
