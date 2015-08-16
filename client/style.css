@@ -45,6 +45,11 @@ a:hover {
     margin: 0;
 }
 
+#sub-filter {
+    left: 50px;
+    top: 200px;
+}
+
 #login-dropdown-list {
     position: fixed;
     left: initial;

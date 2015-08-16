@@ -4,8 +4,6 @@ Template.produceListFilter.helpers({
     },
     currentCategory: function(category) {
         check(category, String);
-        console.log(this);
-        console.log(category);
         return !(String(category) == String(this));
     }
 });
