@@ -3,29 +3,53 @@
         <h3>Filter by:</h3>
         <ul>
             <li>
+                {{#if currentCategory 'vegetable'}}
                 <a href="{{pathFor 'produceListFilter' _filter='vegetable'}}">
                     <div class="accompany-icon">
 
                     </div>
                     Vegetables
                 </a>
+                    {{else}}
+
+                    <div class="accompany-icon">
+
+                    </div>
+                    Vegetables
+                {{/if}}
 
             </li>
             <li>
-                <a href="{{pathFor 'produceListFilter' _filter='fruit'}}">
+                {{#if currentCategory 'fruit'}}
+                    <a href="{{pathFor 'produceListFilter' _filter='fruit'}}">
+                        <div class="accompany-icon">
+
+                        </div>
+                        Fruit
+                    </a>
+                {{else}}
+
                     <div class="accompany-icon">
 
                     </div>
                     Fruit
-                </a>
+                {{/if}}
             </li>
             <li>
-                <a href="{{pathFor 'produceListFilter' _filter='dairy'}}">
+                {{#if currentCategory 'dairy'}}
+                    <a href="{{pathFor 'produceListFilter' _filter='dairy'}}">
+                        <div class="accompany-icon">
+
+                        </div>
+                        Dairy
+                    </a>
+                {{else}}
+
                     <div class="accompany-icon">
 
                     </div>
                     Dairy
-                </a>
+                {{/if}}
             </li>
         </ul>
     </div>

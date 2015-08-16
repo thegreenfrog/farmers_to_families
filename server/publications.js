@@ -28,6 +28,5 @@ Meteor.publish("searchResults", function (urlString) {
 
 Meteor.publish("produceFilter", function(filter) {
     check(filter, String);
-    console.log("filter:" + filter);
     return Posts.find({category: filter});
 });
