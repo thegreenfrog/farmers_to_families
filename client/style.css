@@ -21,7 +21,25 @@ a:hover {
     color: #eeeeee;
 }
 
-.input-group ul{
+.filter-list {
+    background: darkred;
+    width: 125px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.filter-list h3 {
+    color: #eeeeee;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.filter-list ul{
+    font-size: 14px;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -158,20 +176,6 @@ a:hover {
 .posts .spinner-container{
     position: relative;
     height: 100px;
-}
-
-.content-filter {
-    background: darkred;
-    width: 125px;
-    position: absolute;
-    left: 50px;
-    top: 50px;
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.content-filter .filter{
-    padding: 3px;
 }
 
 .content-filter form input {
