@@ -1,60 +1,44 @@
 <template name="produceListFilter">
-    <div class="filter-list">
+    <div class="filter-list" id="category-filter">
         <h3>Filter by:</h3>
-        <ul>
-            <li>
-                {{#if currentCategory 'vegetable'}}
-                <a href="{{pathFor 'produceListFilter' _filter='vegetable'}}">
+            {{#each category}}
+                {{#if currentCategory}}
                     <div class="accompany-icon">
 
                     </div>
-                    Vegetables
-                </a>
+                    {{this}}
+
                     {{else}}
-
-                    <div class="accompany-icon">
-
-                    </div>
-                    Vegetables
-                {{/if}}
-
-            </li>
-            <li>
-                {{#if currentCategory 'fruit'}}
-                    <a href="{{pathFor 'produceListFilter' _filter='fruit'}}">
+                    <a class="filter-link" id={{this}} href="{{pathFor 'produceListFilter' _filter=this}}">
                         <div class="accompany-icon">
 
                         </div>
-                        Fruit
+                        {{this}}
                     </a>
-                {{else}}
-
-                    <div class="accompany-icon">
-
-                    </div>
-                    Fruit
                 {{/if}}
-            </li>
-            <li>
-                {{#if currentCategory 'dairy'}}
-                    <a href="{{pathFor 'produceListFilter' _filter='dairy'}}">
-                        <div class="accompany-icon">
+            {{/each}}
 
-                        </div>
-                        Dairy
-                    </a>
-                {{else}}
 
-                    <div class="accompany-icon">
-
-                    </div>
-                    Dairy
-                {{/if}}
-            </li>
-        </ul>
     </div>
 
-    {{> subFilter this}}
+    <div class="filter-list" id="sub-filter">
+        <h3>Find a Specific Produce: </h3>
+        {{#each subCategory}}
+            {{#if currentSubCategory}}
+                <div class="accompany-icon">
+
+                </div>
+                {{this}}
+            {{else}}
+            <a class="filter-link" id={{this}} href="{{pathFor 'produceListFilter' _filter=this }}">
+                <div class="accompany-icon">
+
+                </div>
+                {{this}}
+            </a>
+            {{/if}}
+        {{/each}}
+    </div>
 
     <div class="posts">
         {{#each posts}}
