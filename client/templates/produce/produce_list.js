@@ -2,10 +2,21 @@ Template.produceList.helpers({
     posts: function() {
         return Posts.find({}, {sort: {joined: -1}});
     },
-
+    category: function() {
+        return ['Vegetable', 'Fruit', 'Dairy'];
+    },
     moreResults: function() {
         //if we have fewer rows than we asked for when subscribing, then we have all the items in the collections
         return !(Posts.find().count() < Session.get("itemsLimitPosts"));
+    }
+});
+
+Template.produceList.events({
+    'click .filter-link': function(e) {
+        console.log('set category');
+        var category = $(e.target).closest('div').attr('id');
+        console.log(category);
+        Session.set('category', category);
     }
 });
 

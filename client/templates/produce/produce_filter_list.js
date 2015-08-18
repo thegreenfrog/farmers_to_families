@@ -2,10 +2,12 @@ Template.produceListFilter.helpers({
     posts: function() {
         return Posts.find({}, {sort: {joined: -1}});
     },
-    currentCategory: function() {
+    currentCategory: function(category) {
+        check(category, String);
         //console.log(this);
         if(String(this) == Session.get('category')){
-            console.log('matching category');
+            console.log('matching category ' + category);
+            $("#" + category).addClass('disabled-link');
             return true;
         }
         return false;
@@ -21,9 +23,6 @@ Template.produceListFilter.helpers({
         return ['Vegetable', 'Fruit', 'Dairy'];
     },
     subCategory: function() {
-        console.log('compare');
-        console.log(String(this));
-        console.log(Session.get('category'));
         if(Session.get('category') == 'Vegetable') {
             return ['Carrots', 'Squash', 'Tomatoes', 'Potatoes', 'Kale', 'Avocado'];
         } else if(Session.get('category') == "Fruit"){
@@ -38,15 +37,14 @@ Template.produceListFilter.events({
     'click .filter-link': function(e) {
         var $parent = $(e.target).closest('div');
         //console.log($parent.attr('id'));
-        if($parent.attr('id') == "category-filter") {
-            //console.log($(e.target).attr('id'));
-            Session.set('category', $(e.target).attr('id'));
-            console.log('set category')
+        if($parent.attr('class') == "filter-element") {
+            console.log('set category');
+            console.log($parent.attr('id'));
+            Session.set('category', $parent.attr('id'));
             Session.set('subCategory', '');
-            //console.log('category');
         } else {
-            Session.set('subcategory', $(e.target).attr('id'));
-            //console.log('subcat');
+            Session.set('subcategory', $parent.attr('id'));
+            console.log('subcat');
         }
     }
 });

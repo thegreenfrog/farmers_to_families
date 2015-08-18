@@ -21,6 +21,10 @@ a:hover {
     color: #eeeeee;
 }
 
+.disabled-link {
+    color: #666666;
+}
+
 .filter-list {
     background: darkred;
     width: 125px;

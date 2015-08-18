@@ -1,33 +1,16 @@
 <template name="produceList">
     <div class="filter-list">
         <h3>Filter by:</h3>
-        <ul>
-            <li>
-                <a href="{{pathFor 'produceListFilter' _filter='vegetable'}}">
+        {{#each category}}
+            <div class="filter-element" id={{this}}>
+                <a class="filter-link" href="{{pathFor 'produceListFilter' _filter=this}}">
                     <div class="accompany-icon">
 
                     </div>
-                    Vegetables
+                    {{this}}
                 </a>
-
-            </li>
-            <li>
-                <a href="{{pathFor 'produceListFilter' _filter='fruit'}}">
-                    <div class="accompany-icon">
-
-                    </div>
-                    Fruit
-                </a>
-            </li>
-            <li>
-                <a href="{{pathFor 'produceListFilter' _filter='dairy'}}">
-                    <div class="accompany-icon">
-
-                    </div>
-                    Dairy
-                </a>
-            </li>
-        </ul>
+            </div>
+        {{/each}}
     </div>
 
     <div class="posts">
