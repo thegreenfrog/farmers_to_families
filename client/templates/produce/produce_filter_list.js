@@ -1,3 +1,14 @@
+Template.produceListFilter.onRendered(function() {
+    if (!this.rendered){ //run only on first render
+        Tracker.afterFlush(highlightCategory);
+    }
+});
+
+function highlightCategory(){
+    //console.log('disabling' +  Session.get('category'));
+    $("#" + Session.get('category')).addClass('disabled-link');
+}
+
 Template.produceListFilter.helpers({
     posts: function() {
         return Posts.find({}, {sort: {joined: -1}});
@@ -6,7 +17,7 @@ Template.produceListFilter.helpers({
         check(category, String);
         //console.log(this);
         if(String(this) == Session.get('category')){
-            console.log('matching category ' + category);
+            //console.log('matching category ' + category);
             $("#" + category).addClass('disabled-link');
             return true;
         }
@@ -14,7 +25,7 @@ Template.produceListFilter.helpers({
     },
     currentSubCategory: function() {
         if(String(this) == Session.get('subcategory')){
-            console.log('matching subcat');
+            //console.log('matching subcat');
             return true;
         }
         return false;
@@ -35,9 +46,9 @@ Template.produceListFilter.helpers({
 
 Template.produceListFilter.events({
     'click .filter-link': function(e) {
-        var $parent = $(e.target).closest('div');
+        var $parent = $(e.target).closest('.filter-element');
         //console.log($parent.attr('id'));
-        if($parent.attr('class') == "filter-element") {
+        if($parent.attr('id') == "Vegetable" || $parent.attr('id') == "Fruit" || $parent.attr('id') == "Dairy") {
             console.log('set category');
             console.log($parent.attr('id'));
             Session.set('category', $parent.attr('id'));
