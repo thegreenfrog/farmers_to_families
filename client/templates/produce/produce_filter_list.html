@@ -27,14 +27,14 @@
     <div class="filter-list" id="sub-filter">
         <h3>Find a Specific Produce: </h3>
         {{#each subCategory}}
-            <div class="filter-element">
-            {{#if currentSubCategory}}
+            <div class="filter-element" id={{this}}>
+            {{#if currentSubCategory this}}
                 <div class="accompany-icon">
 
                 </div>
                 {{this}}
             {{else}}
-            <a class="filter-link" id={{this}} href="{{pathFor 'produceListFilter' _filter=this }}">
+            <a class="filter-link" href="{{pathFor 'produceListFilter' _filter=this }}">
                 <div class="accompany-icon">
 
                 </div>

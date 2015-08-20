@@ -23,9 +23,10 @@ Template.produceListFilter.helpers({
         }
         return false;
     },
-    currentSubCategory: function() {
-        if(String(this) == Session.get('subcategory')){
+    currentSubCategory: function(subcategory) {
+        if(String(subcategory) == Session.get('subcategory')){
             //console.log('matching subcat');
+            $("#" + subcategory).addClass('disabled-link');
             return true;
         }
         return false;
@@ -50,7 +51,7 @@ Template.produceListFilter.events({
         //console.log($parent.attr('id'));
         if($parent.attr('id') == "Vegetable" || $parent.attr('id') == "Fruit" || $parent.attr('id') == "Dairy") {
             console.log('set category');
-            console.log($parent.attr('id'));
+            //console.log($parent.attr('id'));
             Session.set('category', $parent.attr('id'));
             Session.set('subCategory', '');
         } else {
