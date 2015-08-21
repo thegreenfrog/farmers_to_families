@@ -17,9 +17,9 @@ a{
     color: #eeeeee;
 }
 
-a:hover {
-    color: #eeeeee;
-}
+a:visited { text-decoration: none; background-color: inherit!important; }
+a:hover {  text-decoration: none; color: black; background-color: inherit!important; }
+a:focus { text-decoration: none; }
 
 .disabled-link {
     color: #666666;
