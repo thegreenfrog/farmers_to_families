@@ -1,7 +1,10 @@
 <template name="profilePage">
-    <div class=".col-sm-5 .col-md-4">
+    <div class="prof-info">
         <div class="thumbnail" id="prof-pic">
             <img src="" alt="Profile Picture">
+            <div class="name-tag">
+                {{this}}
+            </div>
         </div>
         <div class="snippet">
             <div class="thumbnail" id="prof-info">
@@ -19,7 +22,7 @@
             </div>
         {{/if}}
     </div>
-    <div class=".col-sm-7 .col-md-8">
+    <div class="post-history">
         {{#each activities}}
             <a href="{{pathFor 'producePage'}}">
                 {{> activityItem}}

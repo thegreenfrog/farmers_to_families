@@ -61,8 +61,11 @@ a:focus { text-decoration: none; }
 }
 #main {
     position: relative;
+    width: 100%;
 }
+
 .page {
+    background-color: gray;
     position: absolute;
     top: 0px;
     width: 100%;
@@ -160,6 +163,35 @@ a:focus { text-decoration: none; }
     -o-transition: all 300ms 0ms ease-in;
     transition: all 300ms 0ms ease-in; }
 
+/*profile page styling*/
+.prof-info {
+    float: left;
+    width: 20%;
+}
+
+.post-history {
+    float: right;
+    width: 80%;
+}
+
+.thumbnail {
+    width: 160px;
+    height: 200px;
+}
+
+.thumbnail .name-tag {
+    position: absolute;
+    left: 0px;
+    top: 170px;
+    text-align: center;
+    background-color: grey;
+    line-height: 30px;
+    height: 30px;
+    width: 100px;
+}
+
+
+
 .dropdown-menu span {
     display: block;
     padding: 3px 20px;
@@ -177,8 +209,14 @@ a:focus { text-decoration: none; }
     line-height: 60px;
     margin-bottom: 10px; }
 
+.sidebar {
+    width: 20%;
+    margin: 0 auto;
+}
+
 .posts {
-    width: 60%;
+    float: right;
+    width: 80%;
     margin: 0 auto;
 }
 
