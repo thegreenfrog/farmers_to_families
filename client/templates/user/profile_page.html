@@ -15,14 +15,25 @@
         </div>
         {{#if farmExists}}
             <div class="snippet">
-                <h2><small>Farm: </small></h2>
+                <h2><small>Farm:</small></h2>
                 <div class="thumbnail" id="farm-info">
-
+                    <div class="name-tag">
+                        {{thisFarm}}
+                    </div>
                 </div>
             </div>
         {{/if}}
     </div>
     <div class="post-history">
+        <div class="history-tab">
+            <div class="user-activity">
+
+            </div>
+            <div class="farm-posts">
+
+            </div>
+
+        </div>
         {{#each activities}}
             <a href="{{pathFor 'producePage'}}">
                 {{> activityItem}}
