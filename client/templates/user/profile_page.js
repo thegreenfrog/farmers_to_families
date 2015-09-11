@@ -6,6 +6,7 @@ Template.profilePage.helpers({
         return !!Meteor.user().farm;
     },
     thisFarm: function() {
-        return Meteor.user().farm;
+        var user = Farmers.findOne({_id: Meteor.user().farm});
+        return user.name;
     }
 });

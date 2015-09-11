@@ -10,7 +10,8 @@ Meteor.publish("userData", function () {
 Meteor.publish("userActivities", function(username) {
     check(username, String);
     return[
-        Posts.find({author: username})
+        Posts.find({author: username}),
+        Farmers.find({author: username})
     ]
 });
 

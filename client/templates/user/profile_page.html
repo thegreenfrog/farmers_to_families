@@ -1,7 +1,6 @@
 <template name="profilePage">
     <div class="prof-info">
         <div class="thumbnail" id="prof-pic">
-            <img src="" alt="Profile Picture">
             <div class="name-tag">
                 {{this}}
             </div>
@@ -25,19 +24,22 @@
         {{/if}}
     </div>
     <div class="post-history">
-        <div class="history-tab">
-            <div class="user-activity">
+        <ul class="nav nav-tabs history-tab">
+            <li class="active">
+                <a data-toggle="tab" href="">Farm Posts</a>
+            </li>
+            <li >
+                <a data-toggle="tab" href="">User Activity</a>
+            </li>
 
-            </div>
-            <div class="farm-posts">
-
-            </div>
-
+        </ul>
+        <div class="tab-detail">
+            {{#each activities}}
+                <a href="{{pathFor 'producePage'}}">
+                    {{> activityItem}}
+                </a>
+            {{/each}}
         </div>
-        {{#each activities}}
-            <a href="{{pathFor 'producePage'}}">
-                {{> activityItem}}
-            </a>
-        {{/each}}
+
     </div>
 </template>
